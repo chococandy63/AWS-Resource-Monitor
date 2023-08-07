@@ -1,5 +1,5 @@
 # AWS-Resource-Monitor Project
-AWS Project using SHELL SCRIPTING for DevOps
+AWS Project using SHELL SCRIPTING- DevOps project
 
 ### Purpose of the project
 To create a shell script that will monitor the aws resource usage at a particular instance of time.

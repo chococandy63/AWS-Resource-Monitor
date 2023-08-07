@@ -2,31 +2,35 @@
  Live AWS Project using SHELL SCRIPTING for DevOps
 
 ### Purpose of the project
-To create a shell script that will monitor the resource usage at a particular instance of time.
+To create a shell script that will monitor the aws resource usage at a particular instance of time.
 
 ### Prerequisites 
 
-- Linux machine(AWS EC2 ubuntu instance)
+- Linux machine( or AWS EC2 ubuntu instance)
 - AWS CLI
 - Bash
-- AWS configure (Provide the access key, secret access key, default output region, JSON format) do the following configurations
+- AWS configure (Provide the access key, secret access key, default output region, JSON format) do the following configurations.
 
-### Concept of Cron Job
+### Concept Of Cron Job
 
-How to make sure that a certain script is running at X or Y time? → using cron jobs in Linux
+How to make sure that a certain script is running at X or Y time? → Using cron jobs in Linux
 
-for example: if by chance you don't get a chance to execute the shell script at 6 pm or if u missed it by mistake then cronjob will automatically execute the shell script for you.
+For example: If by chance you don't get a chance to execute the shell script at a particular instance of time or if you missed it by mistake then cronjob will automatically execute the shell script for you.
 
-you can set a cronjob - your Linux machine will wait for 6 pm and automatically will execute the shell script for you.
+You can set a cronjob - Your Linux machine will wait for that particular instance of time and automatically will execute the shell script for you.
 
-(write a )SHELL SCRIPT (integrate with a)→ CRON JOB
+### TASK 
+
+Write a SHELL SCRIPT to monitor aws resource usage and integrate it with a CRON JOB
 
 ###  Setting Up Environment
 
 Step 1: Check whether `aws-cli` is installed or not.
+
 ![image](https://github.com/chococandy63/Live-AWS-Project/assets/79960426/b8496918-d9d6-456b-ba79-2ff120e244ca)
 
-Step 2: Configure your credentials to talk to aws using aws configure.For reference:[https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
+Step 2: Configure your credentials to talk to aws using aws configure.
+For reference:[https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
 
 ![image](https://github.com/chococandy63/Live-AWS-Project/assets/79960426/0f3b0b98-8dd3-4c62-a73b-b2aa22e8fa9e)
 
@@ -34,7 +38,8 @@ Step 3: Create a new folder `aws_resource_tracker` and cd into it. Open a new fi
 
 ![image](https://github.com/chococandy63/Live-AWS-Project/assets/79960426/46525122-fc97-4a7b-a4eb-e2ad9b9890b2)
 
-Step 4: Write the shell script. Always refer incase of any doubts:[https://docs.aws.amazon.com/cli/latest/reference/](https://docs.aws.amazon.com/cli/latest/reference/)
+Step 4: Write the shell script. 
+Always refer in case of any doubts:[https://docs.aws.amazon.com/cli/latest/reference/](https://docs.aws.amazon.com/cli/latest/reference/)
 
 Step 5: Give permissions by running `chmod 777 aws_resource_tracker.sh`. Using chmod 777
 means to make the file readable, writable, and executable by everyone with access.
@@ -60,6 +65,7 @@ Explaination: We use a pipe to send the output of the first command to `jq`, `jq
 
 Step 9: Redirect command output to a file by replacing `aws s3 ls` with  `aws s3 ls >> resourcetracker`. Similarly, follow the same for all commands.
 New file: resourceTracker has been created.
+
 ![image](https://github.com/chococandy63/Live-AWS-Project/assets/79960426/b8926375-214d-42f4-afba-2622cce8a89a)
 
 

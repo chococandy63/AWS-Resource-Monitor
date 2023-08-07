@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#################
+# Author: chococandy
+# Date: 7th-August
+#
+# Version: v1
+# This script will report the aws resource usage
+#################
+
+# Track the following resources:
+# AWS S3
+# AWS EC2
+# AWS Lambda
+# AWS IAM Users
+
+# list s3 buckets
+aws s3 ls
+
+# list ec2 instances
+aws ec2 descibe-instances
+
+# list aws Lambda functions
+aws lambda list-functions
+
+# list IAM Users
+aws iam list-users
+
+

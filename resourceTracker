@@ -1,0 +1,11 @@
+{
+    "Users": [
+        {
+            "Path": "/",
+            "UserName": "vscode",
+            "UserId": "AIDAX6FHXCKN2IGZUJ4UI",
+            "Arn": "arn:aws:iam::545812583067:user/vscode",
+            "CreateDate": "2023-07-08T09:14:18+00:00"
+        }
+    ]
+}

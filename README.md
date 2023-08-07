@@ -36,6 +36,38 @@ Step 3: Create a new folder `aws_resource_tracker` and cd into it. Open a new fi
 
 Step 4: Write the shell script. Always refer incase of any doubts:[https://docs.aws.amazon.com/cli/latest/reference/](https://docs.aws.amazon.com/cli/latest/reference/)
 
+Step 5: Give permissions by running `chmod 777 aws_resource_tracker.sh`. Using chmod 777
+means to make the file readable, writable, and executable by everyone with access.
+Run the script `./aws_resource_tracker.sh` 
+
+![image](https://github.com/chococandy63/Live-AWS-Project/assets/79960426/05c914f0-43b9-4e10-af90-4cf955b3e3f8)
+
+Step 6: Use this command for a better file mode view `./aws_resource_tracker.sh | more`
+
+![image](https://github.com/chococandy63/Live-AWS-Project/assets/79960426/8646e389-6c14-4bbe-9fa5-3d19a4857c53)
+
+Step 7: Set the script in Debug Mode by adding `set -x` to the script.
+
+![image](https://github.com/chococandy63/Live-AWS-Project/assets/79960426/072a739b-ff85-4a2f-a5b1-fc0e1d275ce2)
+
+We can simplify the output- if we only need to see aws instance id then we can use `jq`- JSON parser to extract the required information from JSON file.
+
+Step 8: Replace `aws ec2 describe-instances` with  `aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'` to get more simplified output.
+
+![image](https://github.com/chococandy63/Live-AWS-Project/assets/79960426/f35b86f4-d4ab-48e7-95af-96bf367921a5)
+
+Explaination: We use a pipe to send the output of the first command to `jq`, `jq` is a JSON parser to get info from JSON files. Similarly, `yq` is used as yml parser.
+
+Step 9: Redirect command output to a file by replacing `aws s3 ls` with  `aws s3 ls >> resourcetracker`. Similarly, follow the same for all commands.
+New file: resourceTracker has been created.
+![image](https://github.com/chococandy63/Live-AWS-Project/assets/79960426/b8926375-214d-42f4-afba-2622cce8a89a)
+
+
+Step 10: Integrate the shell script to a Cron Tab.
+
+
+
+
 Links for more details: 
 - [ec2-describe-instances-command](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html)
 - [s3-ls-command](https://docs.aws.amazon.com/cli/latest/reference/s3/ls.html)

@@ -61,7 +61,7 @@ Step 8: Replace `aws ec2 describe-instances` with  `aws ec2 describe-instances |
 
 ![image](https://github.com/chococandy63/Live-AWS-Project/assets/79960426/f35b86f4-d4ab-48e7-95af-96bf367921a5)
 
-Explaination: We use a pipe to send the output of the first command to `jq`, `jq` is a JSON parser to get info from JSON files. Similarly, `yq` is used as yml parser.
+Explanation: We use a pipe to send the output of the first command to `jq`, `jq` is a JSON parser to get info from JSON files. Similarly, `yq` is used as yml parser.
 
 Step 9: Redirect command output to a file by replacing `aws s3 ls` with  `aws s3 ls >> resourcetracker`. Similarly, follow the same for all commands.
 New file: resourceTracker has been created.
@@ -69,9 +69,31 @@ New file: resourceTracker has been created.
 ![image](https://github.com/chococandy63/Live-AWS-Project/assets/79960426/b8926375-214d-42f4-afba-2622cce8a89a)
 
 
-Step 10: Integrate the shell script to a Cron Tab.
+Step 10: Integrate the shell script into a Cron Tab. Scheduling future jobs using crontab.
+Installing crontab on Arch-linux: `sudo pacman -S cronie` 
 
+![image](https://github.com/chococandy63/AWS-Resource-Monitor/assets/79960426/2e80cd4d-af12-42d1-bcc2-8b5325492079)
 
+`crontab -e`: To edit the crontab to schedule your tasks.
+
+`cd /var/spool/cron`
+
+`cd /etc`
+
+![image](https://github.com/chococandy63/AWS-Resource-Monitor/assets/79960426/55f86815-9e28-4d81-aa06-4a4500594dd9)
+
+Crontab is a file that has actions of the cron, it is a configuration that specifies shell commands to run periodically on a given schedule. Run a particular script at a particular time, it does not require any manual intervention.  
+
+min | hour | day | month | week 
+*     *        *       *    * 
+37    05        *     *     * every 37 min at 5 hours every day every week every month 
+*/1 = makes it run every minute
+
+![image](https://github.com/chococandy63/AWS-Resource-Monitor/assets/79960426/18cc4650-435d-40ba-a425-58b095edc1d0)
+
+List to current active jobs to this crontab:
+
+![image](https://github.com/chococandy63/AWS-Resource-Monitor/assets/79960426/885314cf-9499-4d1f-8e0e-23d60afb7464)
 
 
 Links for more details: 

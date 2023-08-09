@@ -27,7 +27,7 @@ Write a SHELL SCRIPT to monitor aws resource usage and integrate it with a CRON 
 
 Step 1: Check whether `aws-cli` is installed or not.
 
-![image](https://github.com/chococandy63/AWS-Resource-Monitor/assets/79960426/b8496918-d9d6-456b-ba79-2ff120e244ca)
+![image](https://github.com/chococandy63/AWS-Resource-Monitor/images/01.png)
 
 Step 2: Configure your credentials to talk to aws using aws configure.
 For reference:[https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)

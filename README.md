@@ -74,11 +74,10 @@ Installing crontab on Arch-linux: `sudo pacman -S cronie`.
 
 `crontab -e`: To edit the crontab to schedule your tasks.
 
-
-
 Crontab is a file that has actions of the cron, it is a configuration that specifies shell commands to run periodically on a given schedule. Run a particular script at a particular time, it does not require any manual intervention.  
 
 Suppose, I want a script to run at 37 min 5 hours on every day of the month, every month, and every year so I will add the following command to crontab:
+
 `37 05 * * * /bin/bash /chococandy/aws-resource-tracker/aws_resource_tracker.sh`
 
 37     05    *      *      * 
@@ -86,12 +85,11 @@ min | hour | day | month | week
 
 Further, we can modify it to */1 which means it runs every minute.
 
-![image](https://github.com/chococandy63/AWS-Resource-Monitor/assets/79960426/18cc4650-435d-40ba-a425-58b095edc1d0)
+![image](images/11.png)
 
 List to current active jobs to this crontab:
 
-![image](https://github.com/chococandy63/AWS-Resource-Monitor/assets/79960426/885314cf-9499-4d1f-8e0e-23d60afb7464)
-
+![image](images/10.png)
 
 Links for more details: 
 - [ec2-describe-instances-command](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html)

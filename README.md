@@ -89,7 +89,8 @@ Further, we can modify it to */1 which means it runs every minute.
 
 List to current active jobs to this crontab:
 
-![image](images/10.png)
+![image](https://github.com/chococandy63/AWS-Resource-Monitor/assets/79960426/f7d25f85-8521-4bfa-ba16-14cbf76e7bbd)
+
 
 Links for more details: 
 - [ec2-describe-instances-command](https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html)
